@@ -1,11 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Plantilla base con estructura semántica bien definida">
+    <title>Estructura Web Semántica</title>
+    <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+
+    <!-- Encabezado principal del sitio -->
+    <header class="site-header">
+        <div class="container">
+            <a href="#" class="logo">MiSitioWeb</a>
+            <!-- Barra de navegación principal -->
+            <nav aria-label="Navegación principal">
+                <ul class="nav-list">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#articulos">Artículos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" aria-label="Cambiar modo de color">Modo Oscuro</button>
+        </div>
+    </header>
+
+    <!-- Contenido principal de la página -->
+    <main class="container main-layout">
+        
+        <!-- Sección principal de contenido -->
+        <section id="inicio" class="content-area">
+            <header class="section-header">
+                <h1>Bienvenido a una Web Semántica</h1>
+                <p>El uso correcto de etiquetas mejora el SEO y la accesibilidad.</p>
+            </header>
+
+            <!-- Sección de artículos independientes -->
+            <section id="articulos" aria-labelledby="titulo-articulos">
+                <h2 id="titulo-articulos">Últimas Publicaciones</h2>
+                
+                <article class="card">
+                    <header>
+                        <h3>¿Por qué usar HTML semántico?</h3>
+                        <time datetime="2026-11-25">25 de noviembre de 2026</time>
+                    </header>
+                    <p>Las etiquetas semánticas comunican el significado del contenido tanto al navegador como al desarrollador y a los lectores de pantalla.</p>
+                    <footer>
+                        <a href="#" class="read-more">Leer más</a>
+                    </footer>
+                </article>
+
+                <article class="card">
+                    <header>
+                        <h3>Separación de responsabilidades</h3>
+                        <time datetime="2026-11-20">20 de noviembre de 2026</time>
+                    </header>
+                    <p>Mantener HTML, CSS y JavaScript en archivos separados facilita el mantenimiento, la escalabilidad y el rendimiento del proyecto.</p>
+                    <footer>
+                        <a href="#" class="read-more">Leer más</a>
+                    </footer>
+                </article>
+            </section>
+        </section>
+
+        <!-- Contenido secundario o relacionado -->
+        <aside class="sidebar" aria-label="Barra lateral">
+            <section class="widget">
+                <h2>Acerca de</h2>
+                <p>Este bloque usa la etiqueta <code>&lt;aside&gt;</code> porque contiene información complementaria al contenido principal.</p>
+            </section>
+
+            <section class="widget" id="contacto">
+                <h2>Suscríbete</h2>
+                <form id="subscribe-form">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+                    <button type="submit">Suscribirme</button>
+                </form>
+                <p id="form-feedback" class="feedback" aria-live="polite"></p>
+            </section>
+        </aside>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 MiSitioWeb. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Enlace al archivo JS externo (defer asegura que cargue tras el HTML) -->
+    <script src="app.js" defer></script>
 </body>
 </html>
